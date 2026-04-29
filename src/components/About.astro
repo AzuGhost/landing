@@ -1,0 +1,220 @@
+---
+
+const perks = [
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Técnicos Certificados',
+    desc: 'Personal con formación técnica avalada y experiencia comprobada.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    title: 'Respuesta Rápida',
+    desc: 'Atendemos emergencias en menos de 60 minutos dentro de la ciudad.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z"/><path d="M22 19H2"/></svg>`,
+    title: 'Garantía por Escrito',
+    desc: 'Todos nuestros trabajos incluyen garantía documentada de hasta 1 año.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: 'Precios Transparentes',
+    desc: 'Cotización sin costo y sin sorpresas. Precio fijo acordado antes de iniciar.',
+  },
+];
+---
+
+<section class="about section" id="nosotros">
+  <div class="container about__inner">
+
+    <!-- Visual side -->
+    <div class="about__visual">
+      <div class="about__img-wrap">
+       
+        <img
+          src="/images/foto-equipo.png"
+          alt="Equipo Electro Life"
+          class="about__img"
+          width="500" height="560"
+          loading="lazy"
+          onerror="this.parentElement.classList.add('about__img-wrap--fallback')"
+        />
+        
+        <div class="about__exp-bubble">
+          <span class="about__exp-num">8+</span>
+          <span class="about__exp-label">Años de<br/>experiencia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copy side -->
+    <div class="about__copy">
+      <p class="section-label">¿Por qué elegirnos?</p>
+      <h2 class="section-title">
+        Expertos en dar <br/>
+        <span>soluciones eléctricas</span>
+      </h2>
+      <p class="about__text">
+        En <strong>Electro Life</strong> llevamos más de 8 años brindando servicios
+        eléctricos de calidad a hogares, empresas y locales comerciales.
+        Nos diferenciamos por nuestra puntualidad, honestidad y compromiso
+        con la seguridad eléctrica de nuestros clientes.
+      </p>
+
+      <ul class="about__perks">
+        {perks.map(perk => (
+          <li class="about__perk">
+            <div class="about__perk-icon" set:html={perk.icon} />
+            <div class="about__perk-info">
+              <h4>{perk.title}</h4>
+              <p>{perk.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <a href="#contacto" class="btn btn--primary btn--lg">
+        Contáctanos hoy
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  /* Visual */
+  .about__img-wrap {
+    position: relative;
+    max-width: 460px;
+  }
+
+  .about__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--clr-border);
+    box-shadow: var(--glow-md), 0 40px 80px rgba(0,0,0,0.4);
+  }
+
+  .about__img-wrap--fallback {
+    height: 520px;
+    background: linear-gradient(135deg, var(--clr-surface), var(--clr-surface-2));
+    border-radius: 16px;
+    border: 1px solid var(--clr-border);
+  }
+
+  /* Experience bubble */
+  .about__exp-bubble {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: var(--glow-lg);
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .about__exp-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--clr-bg);
+    line-height: 1;
+  }
+
+  .about__exp-label {
+    font-family: var(--font-heading);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--clr-bg);
+    line-height: 1.3;
+    margin-top: 0.2rem;
+  }
+
+  /* Copy */
+  .about__text {
+    color: var(--clr-text-muted);
+    line-height: 1.75;
+    margin-block: 1.5rem 2.5rem;
+    font-size: 0.98rem;
+  }
+
+  .about__text strong {
+    color: var(--clr-primary);
+    font-weight: 600;
+  }
+
+  /* Perks list */
+  .about__perks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about__perk {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .about__perk-icon {
+    flex-shrink: 0;
+    width: 46px; height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,200,255,0.08);
+    border: 1px solid rgba(0,200,255,0.2);
+    border-radius: 10px;
+    color: var(--clr-primary);
+    transition: background 0.3s;
+  }
+
+  .about__perk:hover .about__perk-icon {
+    background: rgba(0,200,255,0.14);
+    box-shadow: var(--glow-sm);
+  }
+
+  .about__perk-info h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 0.2rem;
+  }
+
+  .about__perk-info p {
+    font-size: 0.88rem;
+    color: var(--clr-text-muted);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 900px) {
+    .about__inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about__img-wrap { max-width: 100%; }
+    .about__img { height: 350px; }
+    .about__exp-bubble { right: 1rem; }
+  }
+</style>

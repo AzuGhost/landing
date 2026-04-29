@@ -1,0 +1,175 @@
+<section class="cta-banner" aria-label="Llamada a la acción">
+  <div class="cta-banner__bg" aria-hidden="true">
+    <div class="cta-banner__grid"></div>
+    <div class="cta-banner__orb"></div>
+  </div>
+
+  <div class="container cta-banner__inner">
+    <div class="cta-banner__copy">
+      <p class="cta-banner__eyebrow">Servicio de emergencia 24/7</p>
+      <h2 class="cta-banner__title">
+        ¿Problema eléctrico <br/>
+        <span>ahora mismo?</span>
+      </h2>
+      <p class="cta-banner__desc">
+        No esperes. Nuestros técnicos están disponibles las 24 horas.
+        Llama ahora y resolveremos tu problema hoy.
+      </p>
+    </div>
+
+    <div class="cta-banner__actions">
+      <a href="tel:+593000000000" class="cta-banner__phone-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/>
+        </svg>
+        <div>
+          <span class="cta-banner__phone-label">Llamar ahora</span>
+          <span class="cta-banner__phone-num">+593 00 000 0000</span>
+        </div>
+      </a>
+
+      <a href="https://wa.me/593000000000" target="_blank" rel="noopener" class="btn btn--outline btn--lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.05L.785 23.493a.5.5 0 0 0 .622.622l4.443-1.499A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Z" opacity=".3"/>
+        </svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #001f3f 0%, #002d5c 50%, #001a33 100%);
+    border-top: 1px solid rgba(0,200,255,0.2);
+    border-bottom: 1px solid rgba(0,200,255,0.2);
+    padding-block: clamp(4rem, 7vw, 6rem);
+  }
+
+  /* Animated bg */
+  .cta-banner__bg { position: absolute; inset: 0; pointer-events: none; }
+
+  .cta-banner__grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .cta-banner__orb {
+    position: absolute;
+    width: 600px; height: 600px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(0,200,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  /* Inner */
+  .cta-banner__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  /* Copy */
+  .cta-banner__eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+    text-shadow: var(--glow-sm);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-banner__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--clr-text);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .cta-banner__title span {
+    color: var(--clr-primary);
+    text-shadow: var(--glow-md);
+  }
+
+  .cta-banner__desc {
+    color: var(--clr-text-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 480px;
+  }
+
+  /* Actions */
+  .cta-banner__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* Phone button */
+  .cta-banner__phone-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.75rem;
+    background: var(--clr-primary);
+    border-radius: 6px;
+    box-shadow: var(--glow-md);
+    color: var(--clr-bg);
+    transition: all 0.25s var(--ease-out);
+  }
+
+  .cta-banner__phone-btn:hover {
+    background: var(--clr-accent);
+    box-shadow: var(--glow-lg);
+    transform: translateY(-2px);
+  }
+
+  .cta-banner__phone-btn > svg { flex-shrink: 0; }
+
+  .cta-banner__phone-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .cta-banner__phone-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 900px) {
+    .cta-banner__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-banner__actions { flex-direction: column; width: 100%; }
+    .cta-banner__phone-btn { width: 100%; justify-content: center; }
+  }
+</style>

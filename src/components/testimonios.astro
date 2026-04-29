@@ -1,0 +1,246 @@
+---
+
+const testimonios = [
+  {
+    name: 'Carlos Mendoza',
+    role: 'Propietario, Local Comercial',
+    avatar: '/images/avatars/avatar-1.jpg',
+    rating: 5,
+    text: 'Excelente servicio. Vinieron puntualmente, identificaron el problema en minutos y lo solucionaron de inmediato. El precio fue justo y el trabajo impecable.',
+  },
+  {
+    name: 'María González',
+    role: 'Arquitecta',
+    avatar: '/images/avatars/avatar-2.jpg',
+    rating: 5,
+    text: 'He contratado a Electro Life para varios proyectos de construcción. Siempre profesionales, con materiales de calidad y cumpliendo los plazos acordados.',
+  },
+  {
+    name: 'Roberto Silva',
+    role: 'Gerente, Empresa Textil',
+    avatar: '/images/avatars/avatar-3.jpg',
+    rating: 5,
+    text: 'Nos realizaron el mantenimiento preventivo de toda la planta. El informe técnico fue muy detallado y los técnicos extremadamente competentes.',
+  },
+  {
+    name: 'Ana Torres',
+    role: 'Propietaria de Casa',
+    avatar: '/images/avatars/avatar-4.jpg',
+    rating: 5,
+    text: 'Llamé por una emergencia a las 10pm y llegaron en menos de una hora. Repararon el problema sin hacerme pagar de más. Totalmente recomendados.',
+  },
+];
+---
+
+<section class="testimonios section" id="testimonios">
+  <div class="container">
+
+    <header class="testimonios__header">
+      <p class="section-label">Testimonios</p>
+      <h2 class="section-title">
+        Lo que dicen <span>nuestros clientes</span>
+      </h2>
+    </header>
+
+    <div class="testimonios__track-wrap">
+      <div class="testimonios__track" id="testimonialTrack">
+        {testimonios.map((t, i) => (
+          <article class="testimonial-card" data-index={i}>
+            <div class="testimonial-card__stars" aria-label={`${t.rating} estrellas`}>
+              {Array.from({ length: t.rating }).map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--clr-primary)">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/>
+                </svg>
+              ))}
+            </div>
+            <blockquote class="testimonial-card__text">
+              "{t.text}"
+            </blockquote>
+            <footer class="testimonial-card__author">
+              <img
+                src={t.avatar}
+                alt={t.name}
+                class="testimonial-card__avatar"
+                width="48" height="48"
+                loading="lazy"
+                onerror={`this.src=''; this.style.background='var(--clr-surface-2)'; this.style.display='flex'`}
+              />
+              <div>
+                <p class="testimonial-card__name">{t.name}</p>
+                <p class="testimonial-card__role">{t.role}</p>
+              </div>
+            </footer>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="testimonios__dots" id="testimonialDots">
+      {testimonios.map((_, i) => (
+        <button
+          class={`testimonios__dot ${i === 0 ? 'active' : ''}`}
+          data-index={i}
+          aria-label={`Testimonio ${i + 1}`}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .testimonios__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .testimonios__header .section-label { justify-content: center; }
+
+  /* Slider */
+  .testimonios__track-wrap {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .testimonios__track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  /* Card */
+  .testimonial-card {
+    flex: 0 0 calc(50% - 0.75rem);
+    padding: 2rem;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 12px;
+    transition: border-color 0.3s;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(0,200,255,0.3);
+  }
+
+  .testimonial-card__stars {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .testimonial-card__text {
+    font-size: 0.97rem;
+    color: var(--clr-text-muted);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .testimonial-card__text::before {
+    content: '"';
+    position: absolute;
+    top: -1.5rem; left: -0.5rem;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: rgba(0,200,255,0.1);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .testimonial-card__avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--clr-border);
+    background: var(--clr-surface-2);
+  }
+
+  .testimonial-card__name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--clr-text);
+  }
+
+  .testimonial-card__role {
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+    margin-top: 0.1rem;
+  }
+
+  /* Dots */
+  .testimonios__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .testimonios__dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--clr-surface-2);
+    border: 1px solid var(--clr-border);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+
+  .testimonios__dot.active {
+    background: var(--clr-primary);
+    box-shadow: var(--glow-sm);
+    transform: scale(1.3);
+  }
+
+  @media (max-width: 700px) {
+    .testimonial-card { flex: 0 0 100%; }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('testimonialTrack')!;
+  const dots  = document.querySelectorAll('.testimonios__dot');
+  const cards = document.querySelectorAll('.testimonial-card');
+
+  let current   = 0;
+  let perView   = window.innerWidth > 700 ? 2 : 1;
+  let autoTimer: ReturnType<typeof setInterval>;
+
+  function goTo(index: number) {
+    current = index;
+    const cardWidth = (track.parentElement?.clientWidth ?? 0);
+    const gap = 24;
+    const step = perView === 2 ? (cardWidth / 2 + gap / 2) : cardWidth + gap;
+    track.style.transform = `translateX(-${current * step}px)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function next() {
+    const max = Math.ceil(cards.length / perView) - 1;
+    goTo(current >= max ? 0 : current + 1);
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(next, 4500);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { clearInterval(autoTimer); goTo(i); startAuto(); });
+  });
+
+  window.addEventListener('resize', () => {
+    perView = window.innerWidth > 700 ? 2 : 1;
+    goTo(0);
+  });
+
+  startAuto();
+</script>

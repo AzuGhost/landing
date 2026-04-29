@@ -1,0 +1,32 @@
+---
+
+import BaseLayout    from '../layouts/BaseLayout.astro';
+import Navbar        from '../components/Navbar.astro';
+import Hero          from '../components/Hero.astro';
+import Services      from '../components/Services.astro';
+import About         from '../components/About.astro';
+import Projects      from '../components/Projects.astro';
+import CTABanner     from '../components/CTABanner.astro';
+import Contact       from '../components/Contact.astro';
+import Footer        from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import Testimonios from '../components/testimonios.astro';
+---
+
+<BaseLayout
+  title="Electro Life — Servicios Eléctricos Profesionales en Quito"
+  description="Instalaciones, reparaciones y mantenimiento eléctrico en Quito. Técnicos certificados, servicio 24/7 y garantía en todos los trabajos."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <Services />
+    <About />
+    <Projects />
+    <Testimonios/>
+    <CTABanner />
+    <Contact />
+  </main>
+  <Footer />
+  <WhatsAppFloat />
+</BaseLayout>

@@ -1,0 +1,267 @@
+---
+
+
+const quickLinks = [
+  { label: 'Inicio',    href: '#inicio' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Nosotros',  href: '#nosotros' },
+  { label: 'Proyectos', href: '#proyectos' },
+  { label: 'Contacto',  href: '#contacto' },
+];
+
+const legalLinks = [
+  { label: 'Política de privacidad', href: '#' },
+  { label: 'Términos de servicio',   href: '#' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+
+    <!-- Brand col -->
+    <div class="footer__brand">
+      <a href="#inicio" class="footer__logo">
+        <img
+          src="/images/logo.png"
+          alt="Electro Life"
+          width="40" height="40"
+          onerror="this.style.display='none'"
+        />
+        <span>ELECTRO <strong>LIFE</strong></span>
+      </a>
+      <p class="footer__tagline">
+        Soluciones eléctricas profesionales para tu hogar y negocio.
+        Servicio 24/7 con garantía.
+      </p>
+
+      <!-- Social -->
+      <div class="footer__socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="footer__social" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/593000000000" target="_blank" rel="noopener" class="footer__social" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.05L.785 23.493a.5.5 0 0 0 .622.622l4.443-1.499A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0Z" opacity=".4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="footer__col">
+      <h4 class="footer__col-title">Navegación</h4>
+      <ul class="footer__links">
+        {quickLinks.map(link => (
+          <li><a href={link.href} class="footer__link">{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Services col -->
+    <div class="footer__col">
+      <h4 class="footer__col-title">Servicios</h4>
+      <ul class="footer__links">
+        <li><a href="#servicios" class="footer__link">Instalaciones Eléctricas</a></li>
+        <li><a href="#servicios" class="footer__link">Reparaciones</a></li>
+        <li><a href="#servicios" class="footer__link">Iluminación LED</a></li>
+        <li><a href="#servicios" class="footer__link">Sistemas de Seguridad</a></li>
+        <li><a href="#servicios" class="footer__link">Automatización</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact col -->
+    <div class="footer__col">
+      <h4 class="footer__col-title">Contacto</h4>
+      <ul class="footer__links">
+        <li>
+          <a href="tel:+593000000000" class="footer__link footer__link--icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+            +593 00 000 0000
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@electrolife.ec" class="footer__link footer__link--icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            info@electrolife.ec
+          </a>
+        </li>
+        <li>
+          <span class="footer__link footer__link--icon footer__link--plain">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Quito, Ecuador
+          </span>
+        </li>
+        <li>
+          <span class="footer__link footer__link--icon footer__link--plain">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Lun – Dom, 24h / 7
+          </span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p class="footer__copy">
+        &copy; {year} Electro Life. Todos los derechos reservados.
+      </p>
+      <nav class="footer__legal">
+        {legalLinks.map(link => (
+          <a href={link.href} class="footer__legal-link">{link.label}</a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--clr-bg-2);
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-block: 4rem 3rem;
+  }
+
+  /* Brand */
+  .footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer__logo img {
+    width: 36px; height: 36px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(0,200,255,0.5));
+  }
+
+  .footer__logo span {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--clr-text);
+  }
+
+  .footer__logo strong {
+    color: var(--clr-primary);
+    font-weight: 700;
+    text-shadow: var(--glow-sm);
+  }
+
+  .footer__tagline {
+    font-size: 0.87rem;
+    color: var(--clr-text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    max-width: 280px;
+  }
+
+  /* Socials */
+  .footer__socials { display: flex; gap: 0.6rem; }
+
+  .footer__social {
+    width: 36px; height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--clr-border);
+    border-radius: 6px;
+    color: var(--clr-text-muted);
+    transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .footer__social:hover {
+    color: var(--clr-primary);
+    border-color: rgba(0,200,255,0.3);
+    box-shadow: var(--glow-sm);
+  }
+
+  /* Columns */
+  .footer__col-title {
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clr-text);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer__link {
+    font-size: 0.87rem;
+    color: var(--clr-text-muted);
+    transition: color 0.2s;
+  }
+
+  .footer__link:hover { color: var(--clr-primary); }
+
+  .footer__link--icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer__link--plain { cursor: default; }
+  .footer__link--plain:hover { color: var(--clr-text-muted); }
+
+  /* Bottom bar */
+  .footer__bottom {
+    border-top: 1px solid var(--clr-border);
+    padding-block: 1.5rem;
+  }
+
+  .footer__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer__copy {
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+  }
+
+  .footer__legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer__legal-link {
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+    transition: color 0.2s;
+  }
+
+  .footer__legal-link:hover { color: var(--clr-primary); }
+
+  @media (max-width: 1024px) {
+    .footer__inner { grid-template-columns: 1fr 1fr; }
+    .footer__brand { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 540px) {
+    .footer__inner { grid-template-columns: 1fr; }
+    .footer__bottom-inner { flex-direction: column; text-align: center; }
+  }
+</style>
