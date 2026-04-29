@@ -202,17 +202,28 @@ const navLinks = [
   .navbar__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   /* Mobile Menu */
-  .navbar__mobile {
-    display: none;
-    padding: 1.25rem 1.5rem 1.5rem;
-    background: rgba(4, 15, 31, 0.98);
-    border-top: 1px solid var(--clr-border);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s var(--ease-out);
-  }
+.navbar__mobile {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    max-height 0.4s var(--ease-out),
+    opacity    0.3s ease,
+    visibility 0s   linear 0.4s; 
+  background: rgba(4, 15, 31, 0.98);
+  border-top: 1px solid var(--clr-border);
+}
 
-  .navbar__mobile.open { max-height: 500px; }
+.navbar__mobile.open {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    max-height 0.4s var(--ease-out),
+    opacity    0.3s ease,
+    visibility 0s   linear 0s;  
+}
 
   .navbar__mobile-links { list-style: none; }
 
